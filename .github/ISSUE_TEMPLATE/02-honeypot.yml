@@ -1,0 +1,62 @@
+name: 허니팟 오작동 신고
+description: 허니팟 시스템이 오작동하여 차단된 경우 차단 해제를 요청할 수 있습니다.
+title: "[허니팟]: "
+labels: ["ban appeal", "honeypot"]
+assignees:
+  - "@TeamMDD/guide"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        <br/>
+
+        > [!IMPORTANT]
+        > 관리자에 의한 차단 조치 항소는 [차단 해제 요청](https://github.com/TeamMDD/.github/issues/new?template=01-ban_appeal.yml)에서 진행하십시오.
+
+        MDD/MCC는 스팸 봇을 차단하기 위하여 허니팟 시스템을 도입하고 있습니다.
+
+        허니팟 채널에 메시지가 전송되는 즉시 전송자를 영구 차단하도록 하고 있으며,
+        해당 채널에는 경고문만 작성되어 있으므로 일반 사용자는 메시지를 전송하지 않아야 합니다.
+
+        그럼에도, 간혹 채널을 착각하여 메시지를 잘못 전송할 수 있으므로, 항소를 작성하여 차단을 해제받을 수 있습니다.
+  - type: dropdown
+    id: banned-server
+    attributes:
+      label: 커뮤니티
+      description: 어떤 커뮤니티에서 차단 조치를 받으셨습니까?
+      options:
+        - MDD (Minecraft Development Dictionary)
+        - MCC (Minecraft Customization Community)
+      default: 0
+    validations:
+      required: true
+  - type: input
+    id: handle
+    attributes:
+      label: Discord 핸들
+      description: 차단된 Discord 프로필의 핸들이 무엇입니까?
+      placeholder: "@alpha93"
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: 세부 설명
+      description: 차단 당시 상세한 설명을 작성하여 주십시오.
+      placeholder: "예: 허니팟 채널에 메시지를 전송한 이유"
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 확인해주세요!
+      description: 항소를 생성하기 전, 마지막으로 다음 사항을 모두 확인하여 주십시오.
+      options:
+        - label: 차단 조치를 받은 커뮤니티를 올바르게 선택했습니다.
+          required: true
+        - label: MDD/MCC에서 허니팟 채널에 의해 차단되었습니다.
+          required: true
+        - label: 의도적으로 차단 조치를 받을 수 있는 메시지를 전송하지 않았습니다.
+          required: true
+        - label: MDD/MCC 커뮤니티 활동지침에 동의합니다.
+          required: true
